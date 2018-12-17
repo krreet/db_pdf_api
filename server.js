@@ -1,20 +1,16 @@
-var express = require('express');
-var path = require('path');
+var express = require('express'),
+fs = require('fs'),
+app = express();
 
-var app = express();
+app.get('/pdf', function (req, res) {
+var filePath = "/files/file.pdf";
 
-app.get('/downloadFile', function (req, res) {
-   var file = path.join(__dirname+"/files", 'file.pdf');
-   res.download(file, function (err) {
-       if (err) {
-           console.log("Error");
-           console.log(err);
-       } else {
-           console.log("Success");
-       }
-   });
+fs.readFile(__dirname + filePath , function (err,data){
+res.contentType("application/pdf");
+res.send(data);
+});
 });
 
-var server = app.listen(3000, function () {
-   console.log('Listening on', server.address().port);
+app.listen(3000, function(){
+console.log('Listening on 3000');
 });
