@@ -24,6 +24,8 @@ app.get('/pdf64', function (req, res) {
   
     
     generatePdf(docDefinition, (response) => {
+
+        res.set('Content-Type', 'application/javascript');
         res.send(response); // sends a base64 encoded string to client
       });
     });
