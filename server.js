@@ -11,6 +11,6 @@ res.send(data);
 });
 });
 
-app.listen(process.env.PORT | 3000, function(){
+app.listen(process.env.PORT || 3000, '0.0.0.0' , function(){
 console.log('Listening on 3000', process.env.PORT);
 });
