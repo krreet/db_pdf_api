@@ -4,7 +4,8 @@
   "description": "pdf apis",
   "main": "server.js",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "pdfmake": "^0.1.39"
   },
   "devDependencies": {},
   "scripts": {
