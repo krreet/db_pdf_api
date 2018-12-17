@@ -4,6 +4,7 @@
   "description": "pdf apis",
   "main": "server.js",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.16.4",
     "pdfmake": "^0.1.39"
   },

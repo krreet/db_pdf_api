@@ -3,12 +3,14 @@ var generatePdf = require('./generatePdfBase64');
 fs = require('fs'),
 app = express();
 
+var cors = require('cors');
+
 const docDefinition = {
     content: ['This will show up in the file created']
   };
   
  
-
+  app.use(cors());
 app.get('/pdf', function (req, res) {
 var filePath = "/files/file.pdf";
 
